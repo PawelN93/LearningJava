@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        String imie = "Pawel";
+        int wiek = 29;
+
+        System.out.println("Cześć " + imie + "! Masz " + wiek + " lat.");
     }
 }
