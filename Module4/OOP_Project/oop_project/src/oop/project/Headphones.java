@@ -1,4 +1,4 @@
 package oop.project;
 
-public class Headphones {
+public record Headphones(String name) {
 }
