@@ -1,6 +1,6 @@
 package oop.project.drive;
 
-import oop.project.File;
+import oop.project.file.File;
 
 public interface Drive {
     void addFile(File file);

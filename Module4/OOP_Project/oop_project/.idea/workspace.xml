@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a05c110-b3d7-406d-9bb3-d90cd41b3282" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/oop/project/usbdevice/USBDevice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/project/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/Computer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/USBDevice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/project/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/file/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/project/drive/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/drive/Drive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/project/drive/HDDDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/drive/HDDDrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/project/drive/SSDDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/drive/SSDDrive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -48,6 +50,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="oop.project.file" />
       <recent name="oop.project" />
     </key>
   </component>
