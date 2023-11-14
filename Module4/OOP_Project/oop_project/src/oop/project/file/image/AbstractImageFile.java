@@ -1,25 +1,12 @@
 package oop.project.file.image;
 
-import oop.project.file.File;
+import oop.project.file.AbstractFile;
 import oop.project.file.FileType;
 
-public class AbstractImageFile implements File {
-    protected final String name;
-    protected final int size;
+public abstract class AbstractImageFile extends AbstractFile {
 
     public AbstractImageFile(String name, int size) {
-        this.name = name;
-        this.size = size;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getSize() {
-        return size;
+        super(name, size);
     }
 
     @Override

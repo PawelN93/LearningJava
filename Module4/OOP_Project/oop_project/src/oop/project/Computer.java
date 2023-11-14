@@ -28,6 +28,10 @@ public class Computer {
         drive.listFiles();
     }
 
+    public File findFile(String fileName) {
+        return drive.findFile(fileName);
+    }
+
     public Monitor getMonitor() {
         return monitor;
     }
