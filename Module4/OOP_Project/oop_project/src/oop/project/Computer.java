@@ -1,6 +1,8 @@
 package oop.project;
 
 
+import oop.project.drive.Drive;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,14 @@ public class Computer {
     public Computer(Monitor monitor, Drive drive) {
         this.monitor = monitor;
         this.drive = drive;
+    }
+
+    public void addFile(File file) {
+        drive.addFile(file);
+    }
+
+    public void listFiles() {
+        drive.listFiles();
     }
 
     public Monitor getMonitor() {

@@ -1,4 +1,6 @@
-package oop.project;
+package oop.project.drive;
+
+import oop.project.File;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,7 @@ public class HDDDrive implements  Drive {
     @Override
     public void listFiles() {
         for (File file : files) {
-            System.out.println(file.toString());
+            System.out.println(file.getName());
         }
     }
 }
