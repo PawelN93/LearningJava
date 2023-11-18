@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a05c110-b3d7-406d-9bb3-d90cd41b3282" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/Computer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/drive/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/drive/Drive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/drive/HDDDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/drive/HDDDrive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/drive/SSDDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/drive/SSDDrive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/project/file/image/AbstractImageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/project/file/image/AbstractImageFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +24,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2Y8Z40L89yTcrORwl0dCfoHKfPq" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -42,13 +36,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="oop.project.file" />
