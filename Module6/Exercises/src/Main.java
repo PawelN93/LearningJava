@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,10 +21,17 @@ public class Main {
         // 3. Znajdź użytkowników, którzy znają co najmniej 3 języki,
         // wyświetl imiona tych użytkowników oraz języki, które znają
 
-        users.stream()
-                .filter(user -> user.skills().size() >= 3)
-                .map(user -> user.name() + " : " + String.join(", ", user.skills()))
-                .forEach(System.out::println);
+//        users.stream()
+//                .filter(user -> user.skills().size() >= 3)
+//                .map(user -> user.name() + " : " + String.join(", ", user.skills()))
+//                .forEach(System.out::println);
+
+        // 4. Znajdź użytkownika, który zna najwiecej technologii
+        // Wyświetl jego imie oraz listę technologii
+
+        Optional<User> mostSkilledUser = users.stream()
+                .max(Comparator.comparing(user -> user.skills().size()));
+        System.out.println(mostSkilledUser.get().name() + " : " + String.join(", ", mostSkilledUser.get().skills()));
     }
 
     private static List<User> prepareData() {
