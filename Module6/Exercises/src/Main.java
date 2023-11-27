@@ -6,8 +6,14 @@ public class Main {
         List<User> users = prepareData();
 
         // 1. Wyświetl imiona użytkowników, którzy znają Jave
-        users.stream().filter(user -> user.skills().contains("Java"))
-                .map(User::name)
+//        users.stream().filter(user -> user.skills().contains("Java"))
+//                .map(User::name)
+//                .forEach(System.out::println);
+
+        //2. Wyświetl imiona i wiek nieaktywnych użytkowików
+        users.stream()
+                .filter(user -> !user.IsActive())
+                .map(user -> user.name() + ", " + user.age())
                 .forEach(System.out::println);
     }
 
