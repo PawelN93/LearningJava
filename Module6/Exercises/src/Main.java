@@ -52,14 +52,29 @@ public class Main {
 //        System.out.println(averageAge.getAsDouble());
 
         // 7. Wyświetl ile średnio technologii zna użytkownik
-        OptionalDouble average = users.stream()
-                .mapToInt(user -> user.skills().size())
-                .average();
-        System.out.println(average.getAsDouble());
-        //lub
-        Double average2 = users.stream()
-                .collect(Collectors.averagingInt(user -> user.skills().size()));
-        System.out.println(average2);
+//        OptionalDouble average = users.stream()
+//                .mapToInt(user -> user.skills().size())
+//                .average();
+//        System.out.println(average.getAsDouble());
+//        //lub
+//        Double average2 = users.stream()
+//                .collect(Collectors.averagingInt(user -> user.skills().size()));
+//        System.out.println(average2);
+
+        // 8. Podziel użytkowników na tych, którzy znają Jave
+        // oraz na tych, którzy Javy nie znają. Wyświetl imiona
+        // oraz technologie użytkowników z obu grup.
+
+        Map<Boolean, List<User>> javaUsers = users.stream()
+                .collect(Collectors.partitioningBy(user -> user.skills().contains("Java")));
+
+        javaUsers.get(true).stream()
+                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
+                .forEach(System.out::println);
+        System.out.println();
+        javaUsers.get(false).stream()
+                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
+                .forEach(System.out::println);
     }
 
     private static List<User> prepareData() {
