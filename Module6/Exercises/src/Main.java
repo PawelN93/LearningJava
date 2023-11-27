@@ -10,10 +10,18 @@ public class Main {
 //                .map(User::name)
 //                .forEach(System.out::println);
 
-        //2. Wyświetl imiona i wiek nieaktywnych użytkowików
+        // 2. Wyświetl imiona i wiek nieaktywnych użytkowików
+//        users.stream()
+//                .filter(user -> !user.IsActive())
+//                .map(user -> user.name() + ", " + user.age())
+//                .forEach(System.out::println);
+
+        // 3. Znajdź użytkowników, którzy znają co najmniej 3 języki,
+        // wyświetl imiona tych użytkowników oraz języki, które znają
+
         users.stream()
-                .filter(user -> !user.IsActive())
-                .map(user -> user.name() + ", " + user.age())
+                .filter(user -> user.skills().size() >= 3)
+                .map(user -> user.name() + " : " + String.join(", ", user.skills()))
                 .forEach(System.out::println);
     }
 
