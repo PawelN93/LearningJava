@@ -33,16 +33,23 @@ public class Main {
 
         // 5. Wyświetl średni wiek aktywnych użytkowników
 
-        Double averageAge = users.stream()
-                .filter(User::IsActive)
-                .collect(Collectors.averagingInt(User::age));
-        System.out.println(averageAge);
-        //lub
-        OptionalDouble averageAge2 = users.stream()
-                .filter(User::IsActive)
+//        Double averageAge = users.stream()
+//                .filter(User::IsActive)
+//                .collect(Collectors.averagingInt(User::age));
+//        System.out.println(averageAge);
+//        //lub
+//        OptionalDouble averageAge2 = users.stream()
+//                .filter(User::IsActive)
+//                .mapToInt(User::age)
+//                .average();
+//        System.out.println(averageAge2.getAsDouble());
+
+        // 6. Wyświetl średni wiek nieaktywnych użytkowników
+        OptionalDouble averageAge = users.stream()
+                .filter(user -> !user.IsActive())
                 .mapToInt(User::age)
                 .average();
-        System.out.println(averageAge2.getAsDouble());
+        System.out.println(averageAge.getAsDouble());
     }
 
     private static List<User> prepareData() {
