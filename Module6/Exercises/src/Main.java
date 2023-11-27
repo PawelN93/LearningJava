@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,9 +27,22 @@ public class Main {
         // 4. Znajdź użytkownika, który zna najwiecej technologii
         // Wyświetl jego imie oraz listę technologii
 
-        Optional<User> mostSkilledUser = users.stream()
-                .max(Comparator.comparing(user -> user.skills().size()));
-        System.out.println(mostSkilledUser.get().name() + " : " + String.join(", ", mostSkilledUser.get().skills()));
+//        Optional<User> mostSkilledUser = users.stream()
+//                .max(Comparator.comparing(user -> user.skills().size()));
+//        System.out.println(mostSkilledUser.get().name() + " : " + String.join(", ", mostSkilledUser.get().skills()));
+
+        // 5. Wyświetl średni wiek aktywnych użytkowników
+
+        Double averageAge = users.stream()
+                .filter(User::IsActive)
+                .collect(Collectors.averagingInt(User::age));
+        System.out.println(averageAge);
+        //lub
+        OptionalDouble averageAge2 = users.stream()
+                .filter(User::IsActive)
+                .mapToInt(User::age)
+                .average();
+        System.out.println(averageAge2.getAsDouble());
     }
 
     private static List<User> prepareData() {
