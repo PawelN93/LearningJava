@@ -65,16 +65,22 @@ public class Main {
         // oraz na tych, którzy Javy nie znają. Wyświetl imiona
         // oraz technologie użytkowników z obu grup.
 
-        Map<Boolean, List<User>> javaUsers = users.stream()
-                .collect(Collectors.partitioningBy(user -> user.skills().contains("Java")));
+//        Map<Boolean, List<User>> javaUsers = users.stream()
+//                .collect(Collectors.partitioningBy(user -> user.skills().contains("Java")));
+//
+//        javaUsers.get(true).stream()
+//                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
+//                .forEach(System.out::println);
+//        System.out.println();
+//        javaUsers.get(false).stream()
+//                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
+//                .forEach(System.out::println);
 
-        javaUsers.get(true).stream()
-                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
-                .forEach(System.out::println);
-        System.out.println();
-        javaUsers.get(false).stream()
-                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
-                .forEach(System.out::println);
+        // 9. Sprawdź czy wszyscy użytkownicy mają więcej niz 25 lat
+
+        boolean allMoreThan25 = users.stream()
+                .allMatch(user -> user.age() > 25);
+        System.out.println(allMoreThan25);
     }
 
     private static List<User> prepareData() {
