@@ -91,21 +91,29 @@ public class Main {
 
         // 11. Znajdź najstarszego użytkownika, który zna Jave
 
-        Optional<User> OldestJavaUser = users.stream()
-                .filter(user -> user.skills().contains("Java"))
-                .max(Comparator.comparing(User::age));
-        System.out.println(OldestJavaUser.get().name());
-        //lub
-        Optional<User> OldestJavaUser2 = users.stream()
-                .filter(user -> user.skills().contains("Java"))
-                .sorted(Comparator.comparing(User::age).reversed())
-                .findFirst();
-        System.out.println(OldestJavaUser2.get().name());
-        //lub
-        Optional<User> OldestJavaUser3 = users.stream().filter(user -> user.skills().contains("Java"))
-                .max(Comparator.comparing(User::age));
-        System.out.println(OldestJavaUser3.get().name() + ", " + OldestJavaUser3.get().age());
+//        Optional<User> OldestJavaUser = users.stream()
+//                .filter(user -> user.skills().contains("Java"))
+//                .max(Comparator.comparing(User::age));
+//        System.out.println(OldestJavaUser.get().name());
+//        //lub
+//        Optional<User> OldestJavaUser2 = users.stream()
+//                .filter(user -> user.skills().contains("Java"))
+//                .sorted(Comparator.comparing(User::age).reversed())
+//                .findFirst();
+//        System.out.println(OldestJavaUser2.get().name());
+//        //lub
+//        Optional<User> OldestJavaUser3 = users.stream().filter(user -> user.skills().contains("Java"))
+//                .max(Comparator.comparing(User::age));
+//        System.out.println(OldestJavaUser3.get().name() + ", " + OldestJavaUser3.get().age());
 
+        // 12. Znajdź użytkowników znających języki,
+        // których nazwy zaczynają się na literę C
+        // Wyswietl imiona oraz technolgie tych uzytkownikow
+
+        users.stream()
+                .filter(user -> user.skills().stream().anyMatch(skill -> skill.startsWith("C")))
+                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
+                .forEach(System.out::println);
     }
 
     private static List<User> prepareData() {
