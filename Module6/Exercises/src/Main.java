@@ -77,10 +77,17 @@ public class Main {
 //                .forEach(System.out::println);
 
         // 9. Sprawdź czy wszyscy użytkownicy mają więcej niz 25 lat
+//
+//        boolean allMoreThan25 = users.stream()
+//                .allMatch(user -> user.age() > 25);
+//        System.out.println(allMoreThan25);
 
-        boolean allMoreThan25 = users.stream()
-                .allMatch(user -> user.age() > 25);
-        System.out.println(allMoreThan25);
+        // 10. Sprawdź czy istnieje użytkownik, który ma 40 lub więcej lat
+
+        boolean userOver40 = users.stream()
+                .anyMatch(user -> user.age() >= 40);
+
+        System.out.println(userOver40);
     }
 
     private static List<User> prepareData() {
