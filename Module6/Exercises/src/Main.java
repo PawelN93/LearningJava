@@ -84,10 +84,28 @@ public class Main {
 
         // 10. Sprawdź czy istnieje użytkownik, który ma 40 lub więcej lat
 
-        boolean userOver40 = users.stream()
-                .anyMatch(user -> user.age() >= 40);
+//        boolean userOver40 = users.stream()
+//                .anyMatch(user -> user.age() >= 40);
+//
+//        System.out.println(userOver40);
 
-        System.out.println(userOver40);
+        // 11. Znajdź najstarszego użytkownika, który zna Jave
+
+        Optional<User> OldestJavaUser = users.stream()
+                .filter(user -> user.skills().contains("Java"))
+                .max(Comparator.comparing(User::age));
+        System.out.println(OldestJavaUser.get().name());
+        //lub
+        Optional<User> OldestJavaUser2 = users.stream()
+                .filter(user -> user.skills().contains("Java"))
+                .sorted(Comparator.comparing(User::age).reversed())
+                .findFirst();
+        System.out.println(OldestJavaUser2.get().name());
+        //lub
+        Optional<User> OldestJavaUser3 = users.stream().filter(user -> user.skills().contains("Java"))
+                .max(Comparator.comparing(User::age));
+        System.out.println(OldestJavaUser3.get().name() + ", " + OldestJavaUser3.get().age());
+
     }
 
     private static List<User> prepareData() {
