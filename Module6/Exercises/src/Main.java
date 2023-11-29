@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -136,12 +137,29 @@ public class Main {
         // oddziel je przecinkami, zadbaj o to, żeby zamienić
         // wszystkie litery na duże
 
-        List<String> words = List.of("kajak", "oko", "komputer", "ala", "zakaz", "java", "programowanie");
+//        List<String> words = List.of("kajak", "oko", "komputer", "ala", "zakaz", "java", "programowanie");
+//
+//        String allWords = words.stream()
+//                .map(String::toUpperCase)
+//                .collect(Collectors.joining(", "));
+//        System.out.println(allWords);
 
-        String allWords = words.stream()
-                .map(String::toUpperCase)
-                .collect(Collectors.joining(", "));
-        System.out.println(allWords);
+        // 16. Mając dwie listy liczb całkowitych, znajdź najmniejszą liczbę parzystą
+
+        List<Integer> list1 = List.of(62, 55, 120, 17, 7, 11);
+        List<Integer> list2 = List.of(42, 27, 35, 98);
+
+        Optional<Integer> minimalNumber = Stream.concat(list1.stream(), list2.stream())
+                .filter(number -> number % 2 == 0)
+                .min(Comparator.naturalOrder());
+        System.out.println(minimalNumber.get());
+
+        // lub
+        Optional<Integer> minimalNumber2 = Stream.concat(list1.stream(), list2.stream())
+                .sorted()
+                .filter(number -> number % 2 == 0)
+                .findFirst();
+        System.out.println(minimalNumber2.get());
 
 
     }
