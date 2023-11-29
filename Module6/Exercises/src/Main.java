@@ -127,10 +127,21 @@ public class Main {
 
         // 14. Wybierz z podanej listy, słowa które są palindromami
 
+//        List<String> words = List.of("kajak", "oko", "komputer", "ala", "zakaz", "java", "programowanie");
+//        words.stream()
+//                .filter(word -> word.contentEquals(new StringBuilder(word).reverse()))
+//                .forEach(System.out::println);
+
+        // 15. Wyświetl wszystkie słowa z podanej listy
+        // oddziel je przecinkami, zadbaj o to, żeby zamienić
+        // wszystkie litery na duże
+
         List<String> words = List.of("kajak", "oko", "komputer", "ala", "zakaz", "java", "programowanie");
-        words.stream()
-                .filter(word -> word.contentEquals(new StringBuilder(word).reverse()))
-                .forEach(System.out::println);
+
+        String allWords = words.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.joining(", "));
+        System.out.println(allWords);
 
 
     }
