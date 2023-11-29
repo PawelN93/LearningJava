@@ -118,12 +118,20 @@ public class Main {
         // 13. Utwórz mapę, któa jako klucz otrzyma imie uzytkownika
         // a jako wartość liczbę technologii, ktore zna uzytkownik
 
-        Map<String, Integer> usersAndTech = users.stream()
-                .collect(Collectors.toMap(User::name, user -> user.skills().size()));
+//        Map<String, Integer> usersAndTech = users.stream()
+//                .collect(Collectors.toMap(User::name, user -> user.skills().size()));
+//
+//        System.out.println(usersAndTech.get("Kamil"));
+//        System.out.println(usersAndTech.get("Paulina"));
+//        System.out.println(usersAndTech.get("Asia"));
 
-        System.out.println(usersAndTech.get("Kamil"));
-        System.out.println(usersAndTech.get("Paulina"));
-        System.out.println(usersAndTech.get("Asia"));
+        // 14. Wybierz z podanej listy, słowa które są palindromami
+
+        List<String> words = List.of("kajak", "oko", "komputer", "ala", "zakaz", "java", "programowanie");
+        words.stream()
+                .filter(word -> word.contentEquals(new StringBuilder(word).reverse()))
+                .forEach(System.out::println);
+
 
     }
 
