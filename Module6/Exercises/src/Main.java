@@ -110,10 +110,21 @@ public class Main {
         // których nazwy zaczynają się na literę C
         // Wyswietl imiona oraz technolgie tych uzytkownikow
 
-        users.stream()
-                .filter(user -> user.skills().stream().anyMatch(skill -> skill.startsWith("C")))
-                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
-                .forEach(System.out::println);
+//        users.stream()
+//                .filter(user -> user.skills().stream().anyMatch(skill -> skill.startsWith("C")))
+//                .map(user -> user.name() + ": " + String.join(", ", user.skills()))
+//                .forEach(System.out::println);
+
+        // 13. Utwórz mapę, któa jako klucz otrzyma imie uzytkownika
+        // a jako wartość liczbę technologii, ktore zna uzytkownik
+
+        Map<String, Integer> usersAndTech = users.stream()
+                .collect(Collectors.toMap(User::name, user -> user.skills().size()));
+
+        System.out.println(usersAndTech.get("Kamil"));
+        System.out.println(usersAndTech.get("Paulina"));
+        System.out.println(usersAndTech.get("Asia"));
+
     }
 
     private static List<User> prepareData() {
