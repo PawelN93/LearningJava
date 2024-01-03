@@ -1,19 +1,21 @@
 package pl.pablo;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
 
+        Gson gson = new Gson();
+
+        Type listType = new TypeToken<List<User>>() {
+        }.getType();
         File userFile = new File("src/main/resources/users.json");
-        List<User> users = mapper.readValue(userFile, new TypeReference<>() {
-        });
+        List<User> users = gson.fromJson(new FileReader(userFile), listType);
 
         for (User user : users) {
             System.out.println(user.getName());
@@ -29,6 +31,9 @@ public class Main {
             user.setAge(user.getAge() + 5);
         }
 
-        mapper.writeValue(new File("src/main/resources/users_output.json"), users);
+        Writer writer = new FileWriter("src/main/resources/users_output.json");
+        gson.toJson(users, writer);
+        writer.close();
+
     }
 }
